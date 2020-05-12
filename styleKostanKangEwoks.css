@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+
+
+/* style untuk keseluruhan website */
+body {
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+
+/* style untuk header dan background header */
+header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("image/tampak_depan_kanan.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-color: #565656;
+  background-blend-mode: soft-light;
+}
+
+
+/* style untuk menu navigasi */
+nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  transition: 0.5s;
+  z-index: 1000;
+}
+
+nav .logo-kost img {
+  width: 300px;
+  margin: 10px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  padding: 0;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  display: inline-block;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 1px;
+  padding: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav.sticky ul li a:hover {
+  color: #2e0b00;
+  transform: translateY(-3px);
+}
+
+
+/* style untuk navigasi ketika di scroll oleh user */
+nav.sticky {
+  background-color: #565656;
+  height: 50px;
+  margin-top: -5px;
+}
+
+nav.sticky img {
+  display: none;
+}
+
+nav.sticky ul li a {
+  margin-top: -10px;
+}
+
+
+/* style untuk hamburger navigasi untuk ukuran layar 1100px ke bawah */
+nav .toggle {
+  display: flex;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  align-items: flex-end;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+nav.sticky .toggle {
+  top: 0;
+}
+
+nav .toggle input {
+  position: absolute;
+  width: 55px;
+  height: 32px;
+  right: -17px;
+  top: -6px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+nav .toggle input:checked ~ span:nth-child(3) {
+  width: 20px;
+}
+
+nav .toggle input:checked ~ span:nth-child(4) {
+  width: 10px;
+}
+
+nav .toggle span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+
+/* style untuk judul dari website */
+header .judul-kost {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 70%;
+  height: 100%;
+  margin: 100px auto;
+  color: #FCFEFD;
+}
+
+header .judul-kost p {
+  font-size: 37px;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  padding: 10px;
+  text-shadow: 0 0 10px #ff8c69;
+}
+
+
+/* style untuk content web */
+main {
+  margin: 0 auto;
+}
+
+.fasilitas {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* style untuk fasilitas utama */
+.fasilitas-utama ul {
+  background-color: #ff8c69;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.fasilitas-utama ul li {
+  margin: 10px;
+  padding: 10px;
+  transition: 0.5s;
+  color: #2e0b00;
+}
+
+.fasilitas-utama ul li span {
+  font-size: 27px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.fasilitas-utama ul li p {
+  font-size: 18px;
+}
+
+.fasilitas-utama ul li:hover {
+  transform: scale(1.1);
+}
+
+/* style untuk heading masing-masing menu */
+.fasilitas-lain h2, #harga h2, #galeri h2, #kontak h2 {
+  text-align: left;
+  font-size: 35px;
+  letter-spacing: 10px;
+  color: #2e0b00;
+  padding-left: 100px;
+  padding-bottom: 10px;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  border-bottom: 5px dashed #565656;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+
+/* style untuk menu fasilitas lain */
+.fasilitas-lain ul {
+  font-size: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0 ;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.fasilitas-lain li {
+  flex-basis: 25%;
+  margin: 25px;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+  color: #2e0b00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.fasilitas-lain li span {
+  display: block;
+  font-size: 13px;
+  color: #565656;
+  text-transform: capitalize;
+  font-style: italic;
+  text-align: right;
+  transition: 0.5s;
+  transform: translateY(50px);
+}
+
+.fasilitas-lain ul li:hover {
+  border-bottom: 2px solid #2e0b00;
+  transform: translateX(20px);
+}
+
+.fasilitas-lain li:hover span {
+  transform: translateY(0);
+}
+
+
+/* style untuk menu harga */
+#harga {
+  display: flex;
+  flex-direction: column;
+}
+
+#harga .container-harga {
+  display: flex;
+}
+
+#harga .container-harga p {
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  color: #FCFEFD;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 23px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+#harga .container-harga p:nth-child(1) {
+  background-color: #ff8c69;
+}
+
+#harga .container-harga p:nth-child(2) {
+  background-color: #565656;
+}
+
+#harga .container-harga p .angka {
+  display: inline-block;
+  font-size: 80px;
+}
+
+.lokasi-info {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 70%;
+  margin-bottom: 25px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.lokasi-info h2 {
+  color: #2e0b00;
+  font-size: 35px;
+  letter-spacing: 7px;
+  margin-bottom: 30px;
+}
+
+address {
+  color: #565656;
+  font-size: 18px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.lokasi-map {
+  width: 70%;
+  margin: auto;
+}
+
+.lokasi-map iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+#galeri .galeri-foto {
+  box-sizing: border-box;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+#galeri .galeri-foto a {
+  display: flex;
+  width: 33%;
+  margin: 0 auto;
+  transition: 0.5s;
+}
+
+#galeri .galeri-foto a img {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+#galeri .galeri-foto a img:hover {
+  transform: translateY(-5px);
+}
+
+
+/* style untuk icon kontak */
+#kontak ul {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+#kontak ul li, .fa {
+  list-style: none;
+  font-size: 27px;
+  letter-spacing: 10px;
+  color: #4A789C;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#kontak ul li {
+  overflow: hidden;
+}
+
+#kontak ul li i {
+  display: inline-block;
+  transform: translateY(60px);
+}
+
+#kontak ul li:hover i {
+  transform: translateY(0);
+}
+
+#kontak ul li:nth-child(1):hover i {
+  color: #25D366;
+}
+
+#kontak ul li:nth-child(1):hover span {
+  color: #128C7E;
+}
+
+#kontak ul li:nth-child(2):hover i {
+  color: #E1306C;
+}
+
+#kontak ul li:nth-child(2):hover span {
+  color: #C13584;
+}
+
+#kontak ul li a span {
+  display: inline-block;
+  transform: translateX(-30px);
+  transition: 0.5s;
+  color: #2e0b00;
+}
+
+#kontak ul li:hover span {
+  transform: translateX(5px);
+}
+
+
+/* style untuk footer */
+footer {
+  background-color: #ff8c69;
+  text-align: center;
+  margin: -20px auto;
+}
+
+footer .bio {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  font-size: 20px;
+  color: #2e0b00;
+  justify-content: center;
+}
+
+footer .bio-foto img {
+  width: 200px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+footer .bio-owner table td {
+  padding: 10px;
+  text-align: left;
+}
+
+footer a {
+  text-decoration: none;
+  color: #2e0b00;
+  letter-spacing: 2px;
+}
+
+footer p {
+ margin-top: -10px;
+ box-sizing: border-box;
+ padding-bottom: 20px;
+}
+
+footer p a {
+  color: #565656;
+  transition: 0.5s;
+}
+
+footer p:hover a {
+  color: #2e0b00;
+}
+
+
+@media (max-width: 1100px){
+  nav .toggle span {
+    opacity: 1;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    margin-top: 0;
+    width: 40%;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #565656;
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  header .judul-kost p {
+    font-size: 27px;
+  }
+
+  .fasilitas-utama ul {
+    flex-direction: column;
+  }
+
+  .fasilitas-utama ul li:hover {
+    transform: none;
+  }
+
+  .fasilitas-lain li {
+    flex-basis: 40%;
+    margin-bottom: -10px;
+  }
+
+  .fasilitas-lain ul li:hover {
+    border-bottom: 2px solid white;
+    transform: none;
+  }
+
+  .fasilitas-lain li span {
+    transform: translateY(0);
+    text-align: left;
+  }
+
+  #harga h2, #galeri h2, #kontak h2 {
+    font-size: 40px;
+    padding-left: 60px;
+  }
+
+  #harga .container-harga p {
+    font-size: 18px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  #harga .container-harga p .angka {
+    font-size: 60px;
+    margin-top: 0;
+  }
+
+  .lokasi-info {
+    width: 90%;
+  }
+
+  .lokasi-map {
+    width: 80%;
+  }
+
+  #galeri .galeri-foto a img:hover {
+    transform: none;
+  }
+
+  #kontak ul li i {
+    transform: none;
+  }
+
+  #kontak ul li:nth-child(1) i {
+    color: #25D366;
+  }
+
+  #kontak ul li:nth-child(1) span {
+    color: #128C7E;
+  }
+
+  #kontak ul li:nth-child(2) i {
+    color: #E1306C;
+  }
+
+  #kontak ul li:nth-child(2) span {
+    color: #C13584;
+  }
+
+  #kontak ul li a span {
+    transform: none;
+  }
+
+  #kontak ul li:hover span {
+    transform: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  nav .logo-kost img {
+    width: 200px;
+  }
+
+  header .judul-kost {
+    width: 90%;
+  }
+
+  header .judul-kost p {
+    font-size: 20px;
+  }
+
+  .fasilitas-utama ul li span {
+    font-size: 20px;
+  }
+
+  .fasilitas-utama ul li p {
+    font-size: 15px;
+  }
+
+  .fasilitas-lain h2, #harga h2, #galeri h2, #kontak h2 {
+    font-size: 28px;
+    padding-left: 30px;
+  }
+
+  .fasilitas-lain ul {
+    margin-left: -20px;
+    margin-bottom: -30px;
+    font-size: 16px;
+  }
+
+  .fasilitas-lain li {
+    flex-basis: 100%;
+    width: 80%;
+    padding-bottom: 10px;
+  }
+
+  #harga .container-harga {
+    flex-direction: column;
+  }
+
+  #harga .container-harga p:nth-child(2) {
+    background-color: #ff8c69;
+  }
+
+  .lokasi-info h2 {
+    font-size: 28px;
+  }
+
+  address {
+    font-size: 16px;
+  }
+
+  .lokasi-map {
+    width: 90%;
+  }
+
+  .lokasi-map iframe {
+    height: 300px;
+  }
+
+  #galeri .galeri-foto {
+    flex-direction: column;
+  }
+
+  #galeri .galeri-foto a {
+    width: 100%;
+  }
+
+  #kontak ul {
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  #kontak ul li {
+    margin-bottom: 30px;
+  }
+
+  footer .bio {
+    flex-direction: column;
+    font-size: 15px;
+  }
+
+  footer .bio-foto img {
+    width: 150px;
+  }
+}
